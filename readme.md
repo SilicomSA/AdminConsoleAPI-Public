@@ -7,3 +7,6 @@ https://api.komodo.ch/index.html
 
 Sandbox :
 https://apisandbox.komodo.ch/index.html
+
+Requis :
+.Net Framework 4.5
