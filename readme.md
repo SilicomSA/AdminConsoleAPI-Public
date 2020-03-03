@@ -1,6 +1,6 @@
 **API Console d'administration Silicom**
 
-Vous trouverez la documentation de l'api sur l'interface Swagger en suivant le lien suivant :
+Vous trouverez la documentation de l'api sur l'interface Swagger à l'adresse suivante :
 
 Production :
 https://api.komodo.ch/index.html
