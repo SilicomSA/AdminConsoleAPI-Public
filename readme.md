@@ -14,10 +14,10 @@ Requis :<br />
 
 En cas d'erreur :
 ```
-Could not load file or assembly 'System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a']
+Could not load file or assembly 'System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 ```
 
-Ajouter le code suivant dans l'app.config :
+Ajouter le code suivant dans l'app.config (version **4.0.0.0**) :
 ```
 <configuration>
   <runtime>
