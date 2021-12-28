@@ -1,0 +1,1003 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AdminConsoleAPI_Public</name>
+    </assembly>
+    <members>
+        <member name="M:AdminConsoleAPI_Public.APIRequest.SetCredentialsAsync(System.String,System.String,System.String)">
+            <summary>
+            Modifier les informations d'authentification
+            </summary>
+        </member>
+        <member name="M:AdminConsoleAPI_Public.APIRequest.SendAsync``1(AdminConsoleAPI_Public.APIRequestMethod,System.String)">
+            <summary>
+            Envoyer une requête à l'API
+            </summary>
+        </member>
+        <member name="M:AdminConsoleAPI_Public.APIRequest.SendAsync``1(AdminConsoleAPI_Public.APIRequestMethod,System.String,System.TimeSpan)">
+            <summary>
+            Envoyer une requête à l'API avec timeout
+            </summary>
+        </member>
+        <member name="M:AdminConsoleAPI_Public.APIRequest.SendAsync``1(AdminConsoleAPI_Public.APIRequestMethod,System.String,System.Object)">
+            <summary>
+            Envoyer une requête à l'API avec un body
+            </summary>
+        </member>
+        <member name="M:AdminConsoleAPI_Public.APIRequest.SendAsync``1(AdminConsoleAPI_Public.APIRequestMethod,System.String,System.Object,System.TimeSpan)">
+            <summary>
+            Envoyer une requête à l'API avec un body et timeout
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.PasswordChangeArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.PasswordChangeArgs.AccountUPN">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.PasswordChangeArgs.NewPassword">
+            <summary>
+            Au minimum 8 caractères, dans 3 catégories parmi les suivantes : minuscules, majuscules, chiffres et caractères spéciaux
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.PasswordResetArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.PasswordResetArgs.AccountUPN">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.PasswordResetArgs.NewPassword">
+            <summary>
+            Au minimum 8 caractères, dans 3 catégories parmi les suivantes : minuscules, majuscules, chiffres et caractères spéciaux
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.PasswordResetEmailArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.PasswordResetEmailArgs.AccountUPN">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.PasswordResetMobileArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.PasswordResetMobileArgs.AccountUPN">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.EmailImage.CID">
+            <summary>
+            Identifiant de l'image utilisé dans Body (img src="cid:MY_CID")
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.EmailArgs.To">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="T:AdminConsoleAPI_Public.ErrorCode">
+            <summary>
+            Codes d'erreurs
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.KomodoUPNUser.Account">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.KomodoUser.Company">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>c00000</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ResourceList.IdInfraItem">
+            <summary>
+            Nul si la ressource n'existe pas encore
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ResourceList.IdRequest">
+            <summary>
+            Identifiant d'une demande en cours ou en attente de traitement
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ValidationCodeEmailArgs.Body">
+            <summary>
+            Format HTML avec les tags suivants :<br />
+            - {TOKEN} : Token généré par cette action (exemple d'utilisation : insertion dans le GET de réponse donné à l'utilisateur : https://...?token={TOKEN})<br />
+            - {CODE} : Code de validation généré par cette action
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ValidationCodeMobileArgs.From">
+            <summary>
+            Code pré-enregistré auprès de Silicom (si non spécifié ou incorrect, le SMS sera envoyé avec le code SilicomSA)
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ValidationCodeMobileArgs.Text">
+            <summary>
+            Texte à envoyer avec le tag suivant :<br />
+            - {CODE} : Code de validation généré par cette action
+            </summary>
+        </member>
+        <member name="T:AdminConsoleAPI_Public.Properties.Resources">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.ErrorAttributeBetween">
+            <summary>
+              Recherche une chaîne localisée semblable à Value is invalid (Must be between {0} and {1}).
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.ErrorAttributeEnum">
+            <summary>
+              Recherche une chaîne localisée semblable à Value is invalid (Allowed values : {0}).
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.ErrorAttributeRegex">
+            <summary>
+              Recherche une chaîne localisée semblable à Value is invalid (Bad format).
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.ErrorAttributeRequired">
+            <summary>
+              Recherche une chaîne localisée semblable à Value is null (Mandatory field).
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.ErrorObjectNull">
+            <summary>
+              Recherche une chaîne localisée semblable à Object/Resource is null.
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_ADKomodoAccount">
+            <summary>
+              Recherche une chaîne localisée semblable à c00000.nom (certains caractères spéciaux sont interdits, 20 caractères max.).
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_ADKomodoGroup">
+            <summary>
+              Recherche une chaîne localisée semblable à gs00000.nom (certains caractères spéciaux sont interdits, 40 caractères max.).
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_ADKomodoHomeDrive">
+            <summary>
+              Recherche une chaîne localisée semblable à F: à K:.
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_ADKomodoOldPassword">
+            <summary>
+              Recherche une chaîne localisée semblable à 1 caractère min..
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_ADKomodoPassword">
+            <summary>
+              Recherche une chaîne localisée semblable à 8 caractères min., 3 catégories parmi les suivantes : minuscules, majuscules, chiffres et caractères spéciaux).
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_ADKomodoPhone">
+            <summary>
+              Recherche une chaîne localisée semblable à +00000000000 (11 ou 12 chiffres).
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_CountryCode">
+            <summary>
+              Recherche une chaîne localisée semblable à 2 caractères (ISO 3166).
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_Domain">
+            <summary>
+              Recherche une chaîne localisée semblable à domaine.extension.
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_Email">
+            <summary>
+              Recherche une chaîne localisée semblable à nom@domaine.extension.
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_ForbiddenCharacters">
+            <summary>
+              Recherche une chaîne localisée semblable à Certains caractères spéciaux sont interdits.
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_IPAddress">
+            <summary>
+              Recherche une chaîne localisée semblable à 10.100.200.255.
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_Locale">
+            <summary>
+              Recherche une chaîne localisée semblable à en-US, fr-CH, ....
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_Size10">
+            <summary>
+              Recherche une chaîne localisée semblable à 10 caractères max..
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_Size160">
+            <summary>
+              Recherche une chaîne localisée semblable à 160 caractères max..
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_Size255">
+            <summary>
+              Recherche une chaîne localisée semblable à 255 caractères max..
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_Size50">
+            <summary>
+              Recherche une chaîne localisée semblable à 50 caractères max..
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_Size512">
+            <summary>
+              Recherche une chaîne localisée semblable à 512 caractères max..
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_VmPaaSName">
+            <summary>
+              Recherche une chaîne localisée semblable à c00000.nom (certains caractères spéciaux sont interdits, 30 caractères max.).
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.Properties.Resources.RegexSample_VmSnaphot">
+            <summary>
+              Recherche une chaîne localisée semblable à snapshot-0.
+            </summary>
+        </member>
+        <member name="T:AdminConsoleAPI_Public.RequestStatusGet">
+            <summary>
+            Voir <a href="#/Request/get_api_Request_GetStatus" target="_blank">/api/Request/GetStatus</a>
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.RequestStatusGet.RequestStatus">
+            <summary>
+            Statut global de la demande
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.RequestStatusGet.OperationCount">
+            <summary>
+            Nombre total d'opérations
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.RequestStatusGet.OperationCurrent">
+            <summary>
+            Numéro de l'opération actuelle
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.RequestStatusGet.OperationStatus">
+            <summary>
+            Statut de l'opération
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.RequestStatusGet.OperationProgress">
+            <summary>
+            Pourcentage d'avancement de l'opération
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoGroupProxyAddressesUpdateArgs.Primary">
+            <summary>
+            Requis si l'objet est défini / Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoGroupProxyAddressesUpdateArgs.Secondaries">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoGroupAddUserArgs.GroupName">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>gs00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoGroupAddUser.IdUserInfraItems">
+            <summary>
+            Utilisateurs ayant correctement été ajoutés au groupe
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoGroupCreateArgs.DisplayName">
+            <summary>
+            Certains caractères spéciaux sont interdits
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoGroupCreateArgs.Email">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoGroupCreateArgs.Name">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>gs00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoGroupDeleteArgs.Name">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>gs00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoGroupRemoveUserArgs.GroupName">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>gs00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoGroupRemoveUser.IdUserInfraItems">
+            <summary>
+            Utilisateurs ayant correctement été retirés du groupe
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoGroupUpdateArgs.DisplayName">
+            <summary>
+            Certains caractères spéciaux sont interdits
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoGroupUpdateArgs.Email">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoGroupUpdateArgs.Name">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>gs00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoServiceCreateArgs.JsonData">
+            <summary>
+            Données de configuration pour le service au format Json (requis selon le service)
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoServiceList.IdInfraItemParent">
+            <summary>
+            Identifiant de l'utilisateur parent
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoServiceUpdateArgs.JsonData">
+            <summary>
+            Données de configuration pour le service au format Json
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserAdvancedConfigUpdateArgs.HomeDrive">
+            <summary>
+            Format spécifique (de F à K)
+            </summary>
+            <example>F:</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserProxyAddressesUpdateArgs.Primary">
+            <summary>
+            Requis si l'objet est défini / Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserProxyAddressesUpdateArgs.Secondaries">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserCreateArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserCreateArgs.CountryCode">
+            <summary>
+            Format ISO 3166 alpha-2
+            </summary>
+            <example>CH</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserCreateArgs.DisplayName">
+            <summary>
+            Certains caractères spéciaux sont interdits
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserCreateArgs.Email">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserCreateArgs.Firstname">
+            <summary>
+            Certains caractères spéciaux sont interdits
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserCreateArgs.Lastname">
+            <summary>
+            Certains caractères spéciaux sont interdits
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserCreateArgs.Manager">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserCreateArgs.Mobile">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>41791234567</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserCreateArgs.Password">
+            <summary>
+            Au minimum 8 caractères, dans 3 catégories parmi les suivantes : minuscules, majuscules, chiffres et caractères spéciaux
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserCreateArgs.Phone">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>41581234567</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserCreateArgs.UserPrincipalName">
+            <summary>
+            Format spécifique 
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserDeleteArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserLimitedUpdateArgs.DisplayName">
+            <summary>
+            Certains caractères spéciaux sont interdits
+            </summary>   
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserLimitedUpdateArgs.Email">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserLimitedUpdateArgs.Firstname">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserLimitedUpdateArgs.Lastname">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserLimitedUpdateArgs.Mobile">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>41791234567</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserUpdateArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserUpdateArgs.CountryCode">
+            <summary>
+            Format ISO 3166 alpha-2
+            </summary>
+            <example>CH</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserUpdateArgs.DisplayName">
+            <summary>
+            Certains caractères spéciaux sont interdits
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserUpdateArgs.Email">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserUpdateArgs.Firstname">
+            <summary>
+            Certains caractères spéciaux sont interdits
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserUpdateArgs.Lastname">
+            <summary>
+            Certains caractères spéciaux sont interdits
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserUpdateArgs.Locked">
+            <summary>
+            Un compte peut uniquement être déverrouillé.
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserUpdateArgs.Manager">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserUpdateArgs.Mobile">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>41791234567</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserUpdateArgs.Password">
+            <summary>
+            Définir uniquement en cas de changement de mot de passe<br />
+            Au minimum 8 caractères, dans 3 catégories parmi les suivantes : minuscules, majuscules, chiffres et caractères spéciaux
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserUpdateArgs.Phone">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>41791234567</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.ADKomodoUserUpdateArgs.UserPrincipalName">
+            <summary>
+            Format spécifique 
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.FortiGateRealServerCreateArgs.IPAddress">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>192.168.1.1</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.FortiGateVirtualServerGet.ExternalPort">
+            <summary>
+            Spécifique ou plage
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.FortiGateVirtualServerList.ExternalPort">
+            <summary>
+            Spécifique ou plage
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SecurityDeleteArgs.GroupName">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>gs00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SecurityDeleteArgs.UserAccount">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SecurityUpdateArgs.GroupName">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>gs00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SecurityUpdateArgs.UserAccount">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SecurityUpdateArgs.Merge">
+            <summary>
+            True : les nouvelles permissions seront ajoutées aux permissions existantes<br />
+            False : les permissions existantes seront remplacées
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWCSessionOptionList.Value">
+            <summary>
+            Valeur par défaut
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWCSessionOptionUpdateArgs.Code">
+            <summary>
+            Code d'option SmartWorkPlaceComputer, les options non renseignées seront configurées avec la valeur par défaut
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWCSessionCreateArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWCSessionCreateArgs.MFAMode">
+            <summary>
+            Uniquement None ou SMS
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWCSessionDeleteArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWCSessionOpenList.State">
+            <summary>
+            Uniquement Connected ou Disconnected
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWCSessionUpdateArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWPSessionOptionList.Value">
+            <summary>
+            Valeur par défaut
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWPSessionOptionUpdateArgs.Code">
+            <summary>
+            Code d'option SmartWorkPlace, les options non renseignées seront configurées avec la valeur par défaut
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWPSessionCreateArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWPSessionCreateArgs.KeyboardLocale">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>fr-CH</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWPSessionCreateArgs.MFAMode">
+            <summary>
+            Uniquement None ou SMS
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWPSessionDeleteArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWPSessionOpenList.State">
+            <summary>
+            Uniquement Connected ou Disconnected
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWPSessionUpdateArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SWPSessionUpdateArgs.KeyboardLocale">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>fr-CH</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.StorageAccessCreateArgs.Account">
+            <summary>
+            Définir l'accès pour un utilisateur AD Komodo<br />
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.StorageAccessCreateArgs.GroupName">
+            <summary>
+            Définir l'accès pour un groupe AD Komodo<br />
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>gs00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SDXProfileCreateArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SDXProfileDeleteArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SDXServiceCreateArgs.JsonData">
+            <summary>
+            Données de configuration pour le service au format Json (requis selon le service)
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SDXServiceUpdateArgs.JsonData">
+            <summary>
+            Données de configuration pour le service au format Json
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SDXSessionConfigurationList.HorizonPoolSelection">
+            <summary>
+            Pour utilisateur Silicom uniquement
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SDXSessionOptionList.Value">
+            <summary>
+            Valeur par défaut
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SDXSessionOptionUpdateArgs.Code">
+            <summary>
+            Code d'option Swissdesk X, les options non renseignées seront configurées avec la valeur par défaut
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SDXSessionCreateArgs.ConfigurationCode">
+            <summary>
+            Code de configuration SwissDesk X
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SDXSessionDeleteArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SDXSessionOpenList.State">
+            <summary>
+            Uniquement Connected ou Disconnected
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.SDXSessionUpdateArgs.Account">
+            <summary>
+            Format spécifique (certains caractères spéciaux sont interdits)
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.TenantCreateArgs.CountryCode">
+            <summary>
+            Format ISO 3166 alpha-2
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.TenantCreateArgs.Email">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>nom@domaine.extension</example>
+        </member>
+        <member name="T:AdminConsoleAPI_Public.VmPaaSCDCreateArgs">
+            <summary>
+            Requis, au moins un lecteur CD doit être renseigné
+            </summary>
+        </member>
+        <member name="T:AdminConsoleAPI_Public.VmPaaSCDUpdateArgs">
+            <summary>
+            Conserver l'état actuel si la machine virtuelle est allumée
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSCDUpdateArgs.Key">
+            <summary>
+            Création (si non renseignée) ou modification (si renseignée)
+            </summary>
+        </member>
+        <member name="T:AdminConsoleAPI_Public.VmPaaSHDDCreateArgs">
+            <summary>
+            Requis, au moins un disque dur doit être renseigné
+            </summary>
+        </member>
+        <member name="T:AdminConsoleAPI_Public.VmPaaSHDDUpdateArgs">
+            <summary>
+            Requis, au moins un disque dur doit être renseigné
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSHDDUpdateArgs.Key">
+            <summary>
+            Création (si non renseignée) ou modification (si renseignée)
+            </summary>
+        </member>
+        <member name="T:AdminConsoleAPI_Public.VmPaaSNetworkCreateArgs">
+            <summary>
+            Requis, au moins un réseau doit être renseigné
+            </summary>
+        </member>
+        <member name="T:AdminConsoleAPI_Public.VmPaaSNetworkUpdateArgs">
+            <summary>
+            Requis, au moins un réseau doit être renseigné
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSNetworkUpdateArgs.Key">
+            <summary>
+            Création (si non renseignée) ou modification (si renseignée)
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSPointerCreateArgs.Name">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSPowerStatusArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSSnapshotCreateArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSSnapshotDeleteArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSSnapshotDeleteArgs.IdSnapshot">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>snapshot-0</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSSnapshotDeleteAllArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSSnapshotRevertArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSSnapshotRevertArgs.IdSnapshot">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>snapshot-0</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSSnapshotUpdateArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSSnapshotUpdateArgs.IdSnapshot">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>snapshot-0</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSAcquireTicketArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSCreateArgs.Name">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSDeleteArgs.Name">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSSummaryArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSUpdateArgs.CoresPerSocket">
+            <summary>
+            Conserver l'état actuel si la machine virtuelle est allumée
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSUpdateArgs.Name">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSUpdateArgs.NewName">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>c00000.nom</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSUpdateArgs.MemoryInMb">
+            <summary>
+            Conserver l'état actuel si la machine virtuelle ne prend pas en charge l'ajout à chaud
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmPaaSUpdateArgs.VirtualSockets">
+            <summary>
+            Conserver l'état actuel si la machine virtuelle ne prend pas en charge l'ajout à chaud
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmSDXPowerStatusArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmSDXSnapshotCreateArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmSDXSnapshotDeleteArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmSDXSnapshotDeleteArgs.IdSnapshot">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>snapshot-0</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmSDXSnapshotDeleteAllArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmSDXSnapshotRevertArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmSDXSnapshotRevertArgs.IdSnapshot">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>snapshot-0</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmSDXSnapshotUpdateArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmSDXSnapshotUpdateArgs.IdSnapshot">
+            <summary>
+            Format spécifique
+            </summary>
+            <example>snapshot-0</example>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmSDXAcquireTicketArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+        <member name="P:AdminConsoleAPI_Public.VmSDXSummaryArgs.Account">
+            <summary>
+            Si le compte n'est pas renseigné, l'utilisateur du token sera utilisé
+            </summary>
+        </member>
+    </members>
+</doc>
